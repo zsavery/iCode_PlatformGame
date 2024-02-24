@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PlatformGame\\PlatformGame\\PlatformGame.csproj": {}
+    "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\PlatformGame.csproj": {}
   },
   "projects": {
-    "D:\\PlatformGame\\PlatformGame\\PlatformGame.csproj": {
+    "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\PlatformGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PlatformGame\\PlatformGame\\PlatformGame.csproj",
+        "projectUniqueName": "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\PlatformGame.csproj",
         "projectName": "PlatformGame",
-        "projectPath": "D:\\PlatformGame\\PlatformGame\\PlatformGame.csproj",
+        "projectPath": "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\PlatformGame.csproj",
         "packagesPath": "C:\\Users\\icode_7ur334t\\.nuget\\packages\\",
-        "outputPath": "D:\\PlatformGame\\PlatformGame\\obj\\",
+        "outputPath": "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

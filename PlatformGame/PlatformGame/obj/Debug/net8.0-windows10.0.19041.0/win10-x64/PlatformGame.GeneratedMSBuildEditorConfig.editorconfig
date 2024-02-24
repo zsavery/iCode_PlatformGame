@@ -8,35 +8,35 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PlatformGame
-build_property.ProjectDir = D:\PlatformGame\PlatformGame\
+build_property.ProjectDir = D:\Github\iCode_PlatformGame\PlatformGame\PlatformGame\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[D:/PlatformGame/PlatformGame/App.xaml]
+[D:/Github/iCode_PlatformGame/PlatformGame/PlatformGame/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = PlatformGame.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[D:/PlatformGame/PlatformGame/AppShell.xaml]
+[D:/Github/iCode_PlatformGame/PlatformGame/PlatformGame/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = PlatformGame.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[D:/PlatformGame/PlatformGame/MainPage.xaml]
+[D:/Github/iCode_PlatformGame/PlatformGame/PlatformGame/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = PlatformGame.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[D:/PlatformGame/PlatformGame/Resources/Styles/Colors.xaml]
+[D:/Github/iCode_PlatformGame/PlatformGame/PlatformGame/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = PlatformGame.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[D:/PlatformGame/PlatformGame/Resources/Styles/Styles.xaml]
+[D:/Github/iCode_PlatformGame/PlatformGame/PlatformGame/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = PlatformGame.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml

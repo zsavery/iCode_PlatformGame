@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lhMhqtiCCD0WtVgIyFxhdtxV14iLu2Xi8oPX8Ive3QTw7PoCu04mSvkMqBLiUp+ukGBbCVRryZjwhH9uDDfMTQ==",
+  "dgSpecHash": "AVREWNW4OnuVpd6mF1LfCW1vKefLQW31Xkkam+SQE8XaWwF2gWRyvd5uZgW28y9jeZTTskPft6iPFRnJRwso9g==",
   "success": true,
-  "projectFilePath": "D:\\PlatformGame\\PlatformGame\\PlatformGame.csproj",
+  "projectFilePath": "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\PlatformGame.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\icode_7ur334t\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\icode_7ur334t\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",

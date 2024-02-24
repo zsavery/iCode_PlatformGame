@@ -2,7 +2,7 @@
 {
     public partial class MainPage : ContentPage
     {
-        private Player player;
+        private Player user;
         public int level = 1;
         public int score = 0;
         public Label scoreLabel;
@@ -39,6 +39,23 @@
                     gameGrid.Add(unit, j, i);
 
                     await Task.Delay(100);
+
+                    if (i < 4 && j == 0)
+                    {
+                        //Create BoxView and Platform Object
+                        BoxView box = new BoxView()
+                        {
+                            HeightRequest = 20,
+                            Color = Colors.Green,
+                            VerticalOptions = LayoutOptions.End,
+                            CornerRadius = 10,
+                            ZIndex = 1
+                        };
+                        Platform plat = new Platform(box, i,j);
+
+                        gameGrid.Add(box, plat.col, plat.row);
+                    }
+                    await Task.Delay(100);
                 }
             }
 
@@ -70,6 +87,10 @@
             await Task.Delay(100);
             //add score label
             gameGrid.Add(scoreLabel, 0, 4);
+            await Task.Delay(100);
+            //create player object
+            user = Create_User();
+            gameGrid.Add(user.image, user.col, user.row);
             //delay
             await Task.Delay(100);
             //add level label
@@ -99,5 +120,21 @@
             row = r;
             col = c;
         }
+    }
+
+    //Create Platform Class Here
+    public class Platform
+    {
+        public BoxView boxView;
+        public int row;
+        public int col;
+
+        public Platform(BoxView b, int r, int c)
+        {
+            boxView = b; 
+            row = r;
+            col = c;
+        }
+
     }
 }
