@@ -112,6 +112,7 @@
             if(gridReady)
             {
                 //Jump
+                gridReady = user.Jump(gameGrid, platformList, gridReady, this);
             }
         }
     }
@@ -139,7 +140,23 @@
             }
             else
             {
+                g.SetRow(this.image, this.row -= 1);
+                Platform platform = list[this.row];
+                //Lab starts here 
+                //if player row and col match Platform row and col
+                    //score +1
+                    //update scorre label
 
+                if (platform.row == this.row && platform.col == this.col)
+                {
+                    page.score += 1;
+                    page.scoreLabel.Text = "Score " + page.score;
+                }
+                //else
+                else
+                {
+
+                }
             }
             return con;
         }
