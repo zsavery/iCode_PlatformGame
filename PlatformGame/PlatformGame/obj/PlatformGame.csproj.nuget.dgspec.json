@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\PlatformGame.csproj": {}
+    "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\PlatformGame.csproj": {}
   },
   "projects": {
-    "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\PlatformGame.csproj": {
+    "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\PlatformGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\PlatformGame.csproj",
+        "projectUniqueName": "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\PlatformGame.csproj",
         "projectName": "PlatformGame",
-        "projectPath": "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\PlatformGame.csproj",
+        "projectPath": "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\PlatformGame.csproj",
         "packagesPath": "C:\\Users\\icode_7ur334t\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\obj\\",
+        "outputPath": "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

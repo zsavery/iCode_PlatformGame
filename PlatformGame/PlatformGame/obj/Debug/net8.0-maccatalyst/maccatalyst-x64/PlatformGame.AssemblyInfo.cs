@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlatformGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+7022494e76867cd116b09b019368d7d789e9a9a6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+837ad2c6b1fe0067fd885a3dd2134db596d19034")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlatformGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlatformGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
