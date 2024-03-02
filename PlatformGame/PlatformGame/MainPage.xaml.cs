@@ -2,7 +2,9 @@
 {
     public partial class MainPage : ContentPage
     {
+        private bool gridReady;
         private Player user;
+        private Platform[] platformList = new Platform[4];
         public int level = 1;
         public int score = 0;
         public Label scoreLabel;
@@ -16,7 +18,7 @@
         private void Start_Button_Clicked(object sender, EventArgs e)
         {
             Fill_Grid();
-
+            gridReady = true;
             Start_Button.IsEnabled = false;
         }
 
@@ -52,7 +54,7 @@
                             ZIndex = 1
                         };
                         Platform plat = new Platform(box, i,j);
-
+                        platformList[i] = plat;
                         gameGrid.Add(box, plat.col, plat.row);
                     }
                     await Task.Delay(100);
@@ -104,6 +106,14 @@
             Player user = new Player(img, 4, 2);
             return user;
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e) 
+        {
+            if(gridReady)
+            {
+                //Jump
+            }
+        }
     }
 
     public class Player
@@ -119,6 +129,19 @@
             image = i;
             row = r;
             col = c;
+        }
+
+        public bool Jump(Grid g, Platform[] list , bool con, MainPage page )
+        {
+            if(this.row == 0)
+            {
+                // reach top of game
+            }
+            else
+            {
+
+            }
+            return con;
         }
     }
 
