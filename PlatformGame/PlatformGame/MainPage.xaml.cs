@@ -9,6 +9,7 @@
         public int score = 0;
         public Label scoreLabel;
         public Label levelLabel;
+        public double difficulty = 1000;
 
 
         public MainPage()
@@ -24,7 +25,9 @@
 
         private void Reset_Button_Clicked(object sender, EventArgs e)
         {
-
+            Fill_Grid();
+            gridReady = true;
+            Reset_Button.IsEnabled = false;
         }
 
         async public void Fill_Grid()
@@ -98,6 +101,14 @@
             //add level label
             gameGrid.Add(levelLabel, 4, 4);
 
+
+            foreach(Platform plat in platformList)
+            {
+                //set platform to move right
+                //start platform oscillation
+            }
+
+
         }
 
         private Player Create_User()
@@ -132,7 +143,7 @@
             col = c;
         }
 
-        public bool Jump(Grid g, Platform[] list , bool con, MainPage page )
+        public bool Jump(Grid g, Platform[] list , bool con, PlatformGame.MainPage page )
         {
             if(this.row == 0)
             {
@@ -168,12 +179,48 @@
         public BoxView boxView;
         public int row;
         public int col;
+        public bool isMovingRight;
+        public bool isMovingLeft;
 
         public Platform(BoxView b, int r, int c)
         {
             boxView = b; 
             row = r;
             col = c;
+            isMovingRight = true;
+            isMovingLeft = false;
+        }
+
+        public void StopMovement()
+        {
+            isMovingLeft = false;
+            isMovingRight= false;
+        }
+
+        async public void Oscillate(Grid g, PlatformGame.MainPage page)
+        {
+            int boundaryLeft = 0;
+            int boundaryRight = 4;
+            var rand = new Random();
+            await Task.Delay(rand.Next(1000));
+
+            // move right
+        }
+
+        async public void MoveRight(Grid g, int limLeft, int limRight, PlatformGame.MainPage page)
+        {
+            while(col < limRight && isMovingRight)
+            {
+                col++;
+                g.SetColumn(boxView, col);
+                // set delay based on difficulty
+            }
+            if (isMovingRight)
+            {
+                isMovingLeft = true;
+                isMovingRight = false;
+                // move left
+            }
         }
 
     }
