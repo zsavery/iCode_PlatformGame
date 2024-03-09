@@ -20,7 +20,21 @@ Console.WriteLine("Your Dog: +" +
     userDog.name + " " + userDog.breed + " " +
     userDog.furColor + " " + userDog.age + " ");
 
+void Command()
+{
+    Console.WriteLine("Should " + userDog.name + " sit, speck, fetch, or do a trick?");
+    Console.WriteLine("type one of the following: sit | speak | trick | EXIT");
+    string answer = Console.ReadLine();
 
+    if(answer == "EXIT")
+    {
+        return;
+    }
+    else
+    {
+        Command();
+    }
+}
 
 public class Dog
 {
