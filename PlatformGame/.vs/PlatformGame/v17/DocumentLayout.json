@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Github\\iCode_PlatformGame\\PlatformGame\\",
+  "WorkspaceRootPath": "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\PlatformGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0AC89BA1-5A52-4113-A0AF-0C0A9B8DCEA5}|PlatformGame\\PlatformGame.csproj|d:\\github\\icode_platformgame\\platformgame\\platformgame\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0AC89BA1-5A52-4113-A0AF-0C0A9B8DCEA5}|PlatformGame\\PlatformGame.csproj|c:\\users\\icode_7ur334t\\onedrive\\documents\\z\\github\\icode_platformgame\\platformgame\\platformgame\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0AC89BA1-5A52-4113-A0AF-0C0A9B8DCEA5}|PlatformGame\\PlatformGame.csproj|solutionrelative:platformgame\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0AC89BA1-5A52-4113-A0AF-0C0A9B8DCEA5}|PlatformGame\\PlatformGame.csproj|d:\\github\\icode_platformgame\\platformgame\\platformgame\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{0AC89BA1-5A52-4113-A0AF-0C0A9B8DCEA5}|PlatformGame\\PlatformGame.csproj|c:\\users\\icode_7ur334t\\onedrive\\documents\\z\\github\\icode_platformgame\\platformgame\\platformgame\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0AC89BA1-5A52-4113-A0AF-0C0A9B8DCEA5}|PlatformGame\\PlatformGame.csproj|solutionrelative:platformgame\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "PlatformGame\\MainPage.xaml.cs",
-              "ToolTip": "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\MainPage.xaml.cs",
               "RelativeToolTip": "PlatformGame\\MainPage.xaml.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAxwD8AAAAKAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAswBwAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-24T16:35:02.247Z",
               "EditorCaption": ""
@@ -37,14 +37,13 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainPage.xaml",
-              "DocumentMoniker": "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\MainPage.xaml",
               "RelativeDocumentMoniker": "PlatformGame\\MainPage.xaml",
-              "ToolTip": "D:\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\PlatformGame\\PlatformGame\\MainPage.xaml",
               "RelativeToolTip": "PlatformGame\\MainPage.xaml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-02-24T16:34:59.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-24T16:34:59.946Z"
             }
           ]
         }

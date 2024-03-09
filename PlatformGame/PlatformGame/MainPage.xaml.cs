@@ -106,6 +106,8 @@
             {
                 //set platform to move right
                 //start platform oscillation
+                plat.isMovingRight = true;
+                plat.Oscillate(gameGrid, this);
             }
 
 
@@ -162,6 +164,7 @@
                 {
                     page.score += 1;
                     page.scoreLabel.Text = "Score " + page.score;
+                    platform.StopMovement();
                 }
                 //else
                 else
@@ -214,6 +217,7 @@
                 col++;
                 g.SetColumn(boxView, col);
                 // set delay based on difficulty
+                await Task.Delay((int)page.difficulty);
             }
             if (isMovingRight)
             {

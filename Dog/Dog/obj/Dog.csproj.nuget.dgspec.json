@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Projects\\Dog\\Dog\\Dog.csproj": {}
+    "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\Dog\\Dog\\Dog.csproj": {}
   },
   "projects": {
-    "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Projects\\Dog\\Dog\\Dog.csproj": {
+    "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\Dog\\Dog\\Dog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Projects\\Dog\\Dog\\Dog.csproj",
+        "projectUniqueName": "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\Dog\\Dog\\Dog.csproj",
         "projectName": "Dog",
-        "projectPath": "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Projects\\Dog\\Dog\\Dog.csproj",
+        "projectPath": "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\Dog\\Dog\\Dog.csproj",
         "packagesPath": "C:\\Users\\icode_7ur334t\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Projects\\Dog\\Dog\\obj\\",
+        "outputPath": "C:\\Users\\icode_7ur334t\\OneDrive\\Documents\\Z\\Github\\iCode_PlatformGame\\Dog\\Dog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
