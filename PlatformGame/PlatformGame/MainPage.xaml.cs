@@ -208,6 +208,7 @@
             await Task.Delay(rand.Next(1000));
 
             // move right
+            MoveRight(g, boundaryLeft, boundaryRight, page);
         }
 
         async public void MoveRight(Grid g, int limLeft, int limRight, PlatformGame.MainPage page)
@@ -224,6 +225,23 @@
                 isMovingLeft = true;
                 isMovingRight = false;
                 // move left
+                MoveLeft(g, limLeft, limRight, page);
+            }
+        }
+        async public void MoveLeft(Grid g, int limLeft, int limRight, PlatformGame.MainPage page)
+        {
+            while (col > limRight && isMovingLeft)
+            {
+                col++;
+                g.SetColumn(boxView, col);
+                // set delay based on difficulty
+                await Task.Delay((int)page.difficulty);
+            }
+            if (isMovingLeft)
+            {
+                isMovingLeft = false;
+                isMovingRight = true;
+                MoveRight(g, limLeft, limRight, page);
             }
         }
 
