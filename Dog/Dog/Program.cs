@@ -1,4 +1,6 @@
-﻿Console.WriteLine("Hello welcome to the Dog Program!");
+﻿using System.Data;
+
+Console.WriteLine("Hello welcome to the Dog Program!");
 
 //user input
 Console.WriteLine("What color is your dog?");
@@ -20,6 +22,9 @@ Console.WriteLine("Your Dog: +" +
     userDog.name + " " + userDog.breed + " " +
     userDog.furColor + " " + userDog.age + " ");
 
+Command();
+
+
 void Command()
 {
     Console.WriteLine("Should " + userDog.name + " sit, speck, fetch, or do a trick?");
@@ -32,6 +37,23 @@ void Command()
     }
     else
     {
+        if(answer == "speak")
+        {
+            userDog.talk();
+        }
+        else if (answer == "sit")
+        {
+            userDog.sit();
+        }
+        else if (answer == "fetch")
+        {
+            userDog.fetch();
+        }
+        else if (answer == "trick")
+        {
+            userDog.trick();
+        }
+
         Command();
     }
 }
