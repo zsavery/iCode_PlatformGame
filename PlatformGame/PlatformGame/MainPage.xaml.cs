@@ -2,7 +2,7 @@
 {
     public partial class MainPage : ContentPage
     {
-        private bool gridReady;
+        public bool gridReady;
         private Player user;
         private Platform[] platformList = new Platform[4];
         public int level = 1;
@@ -10,99 +10,120 @@
         public Label scoreLabel;
         public Label levelLabel;
         public double difficulty = 1000;
+        public CloudEnemy enemy;
+        public Button startButton;
 
 
         public MainPage()
         {
             InitializeComponent();
+            startButton = Start_Button;
+
         }
         private void Start_Button_Clicked(object sender, EventArgs e)
         {
-            Fill_Grid();
+            Fill_Grid(true);
             gridReady = true;
             Start_Button.IsEnabled = false;
         }
 
         private void Reset_Button_Clicked(object sender, EventArgs e)
         {
-            Fill_Grid();
+            gameGrid.Clear();
+            Start_Button.IsEnabled = true;
             gridReady = true;
-            Reset_Button.IsEnabled = false;
+            score = 0;
+            level = 1;
+            Start_Button.Text = "Play!";
         }
 
-        async public void Fill_Grid()
+        async public void Fill_Grid(bool start)
         {
-            int rows = 5;
-            int columns = 5;
-
-            for (int i = 0; i < rows; i++)
+            if (start)
             {
-                for (int j = 0; j < columns; j++)
+                int rows = 5;
+                int columns = 5;
+
+                for (int i = 0; i < rows; i++)
                 {
-                    StackLayout unit = new StackLayout() { ZIndex = 0 };
-                    unit.BackgroundColor = Colors.LightSkyBlue;
-                    gameGrid.Add(unit, j, i);
-
-                    await Task.Delay(100);
-
-                    if (i < 4 && j == 0)
+                    for (int j = 0; j < columns; j++)
                     {
-                        //Create BoxView and Platform Object
-                        BoxView box = new BoxView()
+                        StackLayout unit = new StackLayout() { ZIndex = 0 };
+                        unit.BackgroundColor = Colors.LightSkyBlue;
+                        gameGrid.Add(unit, j, i);
+
+                        await Task.Delay(100);
+
+                        if (i < 4 && j == 0)
                         {
-                            HeightRequest = 20,
-                            Color = Colors.Green,
-                            VerticalOptions = LayoutOptions.End,
-                            CornerRadius = 10,
-                            ZIndex = 1
-                        };
-                        Platform plat = new Platform(box, i,j);
-                        platformList[i] = plat;
-                        gameGrid.Add(box, plat.col, plat.row);
+                            //Create BoxView and Platform Object
+                            BoxView box = new BoxView()
+                            {
+                                HeightRequest = 20,
+                                Color = Colors.Green,
+                                VerticalOptions = LayoutOptions.End,
+                                CornerRadius = 10,
+                                ZIndex = 1
+                            };
+                            Platform plat = new Platform(box, i, j);
+                            platformList[i] = plat;
+                            gameGrid.Add(box, plat.col, plat.row);
+                        }
+                        await Task.Delay(100);
                     }
-                    await Task.Delay(100);
+                }
+
+
+                scoreLabel = new Label()
+                {
+                    Text = "Score: " + score,
+                    FontSize = 30,
+                    ZIndex = 1,
+                    TextColor = Colors.White,
+                    Margin = new Thickness(10),
+                    VerticalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.Center
+                };
+                levelLabel = new Label()
+                {
+                    Text = "Level: " + level,
+                    FontSize = 30,
+                    ZIndex = 1,
+                    TextColor = Colors.White,
+                    Margin = new Thickness(10),
+                    VerticalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.Center
+                };
+
+            
+                await Task.Delay(100);
+                gameGrid.Add(scoreLabel, 0, 4); //add score label
+                await Task.Delay(100); //delay 100 seconds
+                user = Create_User(); //create player object
+                gameGrid.Add(user.image, user.col, user.row);
+                await Task.Delay(100);
+                gameGrid.Add(levelLabel, 4, 4); //add level label
+            }
+            else
+            {
+                //reset user & platform -> Reset state
+                user.row = 4;
+                gameGrid.SetRow(user.image, user.row);
+                foreach(Platform plat in platformList) //resets plat columns
+                {
+                    plat.col = 0;
+                    gameGrid.SetColumn(plat.boxView, plat.col);
                 }
             }
 
-            //Lab code here: 
-
-            scoreLabel = new Label()
-            {
-                Text = "Score: " + score,
-                FontSize = 30,
-                ZIndex = 1,
-                TextColor = Colors.White,
-                Margin = new Thickness(10),
-                VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.Center
-            };
-
-            levelLabel = new Label()
-            {
-                Text = "Level: " + level,
-                FontSize = 30,
-                ZIndex = 1,
-                TextColor = Colors.White,
-                Margin = new Thickness(10),
-                VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.Center
-            };
-
-            //delay
-            await Task.Delay(100);
-            //add score label
-            gameGrid.Add(scoreLabel, 0, 4);
-            await Task.Delay(100);
-            //create player object
-            user = Create_User();
-            gameGrid.Add(user.image, user.col, user.row);
-            //delay
-            await Task.Delay(100);
-            //add level label
-            gameGrid.Add(levelLabel, 4, 4);
 
 
-            foreach(Platform plat in platformList)
+
+
+
+
+
+            foreach (Platform plat in platformList)
             {
                 //set platform to move right
                 //start platform oscillation
@@ -120,12 +141,13 @@
             return user;
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e) 
+        private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
         {
-            if(gridReady)
+            if (gridReady)
             {
                 //Jump
                 gridReady = user.Jump(gameGrid, platformList, gridReady, this);
+                if (gridReady == false) { Start_Button.Text = "Game Over"; }
             }
         }
     }
@@ -145,11 +167,14 @@
             col = c;
         }
 
-        public bool Jump(Grid g, Platform[] list , bool con, PlatformGame.MainPage page )
+        public bool Jump(Grid g, Platform[] list, bool con, PlatformGame.MainPage page)
         {
-            if(this.row == 0)
+            if (this.row == 0)
             {
-                // reach top of game
+                page.difficulty *= 0.9;
+                page.level++;
+                page.levelLabel.Text = "Level " + page.level;
+                page.Fill_Grid(false);
             }
             else
             {
@@ -157,8 +182,8 @@
                 Platform platform = list[this.row];
                 //Lab starts here 
                 //if player row and col match Platform row and col
-                    //score +1
-                    //update scorre label
+                //score +1
+                //update scorre label
 
                 if (platform.row == this.row && platform.col == this.col)
                 {
@@ -169,7 +194,7 @@
                 //else
                 else
                 {
-
+                    con = false;
                 }
             }
             return con;
@@ -187,7 +212,7 @@
 
         public Platform(BoxView b, int r, int c)
         {
-            boxView = b; 
+            boxView = b;
             row = r;
             col = c;
             isMovingRight = true;
@@ -197,7 +222,7 @@
         public void StopMovement()
         {
             isMovingLeft = false;
-            isMovingRight= false;
+            isMovingRight = false;
         }
 
         async public void Oscillate(Grid g, PlatformGame.MainPage page)
@@ -213,7 +238,7 @@
 
         async public void MoveRight(Grid g, int limLeft, int limRight, PlatformGame.MainPage page)
         {
-            while(col < limRight && isMovingRight)
+            while (col < limRight && isMovingRight)
             {
                 col++;
                 g.SetColumn(boxView, col);
@@ -225,14 +250,14 @@
                 isMovingLeft = true;
                 isMovingRight = false;
                 // move left
-                MoveLeft(g, limLeft, limRight, page);
+                MoveLeft(g, limLeft, limRight, page); //Start movement
             }
         }
         async public void MoveLeft(Grid g, int limLeft, int limRight, PlatformGame.MainPage page)
         {
             while (col > limRight && isMovingLeft)
             {
-                col++;
+                col--;
                 g.SetColumn(boxView, col);
                 // set delay based on difficulty
                 await Task.Delay((int)page.difficulty);
@@ -245,5 +270,21 @@
             }
         }
 
+    }
+
+
+    public class CloudEnemy
+    {
+        // enemy attributes 
+
+        //construntor
+
+        //Oscilattion function
+
+        //MoveLeft function
+        // ---> if enemy collides with user Destroy() user
+
+        //MoveRight Function
+        // ---> if enemy collides with user Destroy() user
     }
 }
