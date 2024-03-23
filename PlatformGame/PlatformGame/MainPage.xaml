@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="PlatformGame.MainPage">
 
     <AbsoluteLayout x:Name="Canvas" Background="DarkGreen">
@@ -35,6 +36,11 @@
 
             </Button>
         </Grid>
+        <toolkit:MediaElement
+            Source="embed://grid_sounds.mp3"
+            ShouldShowPlaybackControls="False"
+            x:Name="Grid_Sound"/>
+        
     </AbsoluteLayout>
 
 </ContentPage>
