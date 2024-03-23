@@ -1,4 +1,6 @@
-﻿namespace PlatformGame
+﻿using System.Runtime.InteropServices;
+
+namespace PlatformGame
 {
     public partial class MainPage : ContentPage
     {
@@ -10,7 +12,7 @@
         public Label scoreLabel;
         public Label levelLabel;
         public double difficulty = 1000;
-        public CloudEnemy enemy;
+        public CloudEnemy cloud;
         public Button startButton;
 
 
@@ -43,6 +45,8 @@
              * store a random row position forr the enemy
              *     random number 0-4
              */
+            var randCloudPosition = new Random();
+            int cloudRow = randCloudPosition.Next(4);
             if (start)
             {
                 int rows = 5;
@@ -105,11 +109,15 @@
                 gameGrid.Add(user.image, user.col, user.row);
                 await Task.Delay(100);
                 gameGrid.Add(levelLabel, 4, 4); //add level label
-
+                
                 //crate a new Image for the cloud image 
+                Image cloudIMG = new Image() { Source = "cloud_enemy.png" };
                 //set enemy to a new CloudEnemy ojbect
+                cloud = new CloudEnemy(cloudIMG, cloudRow, 4, user);
                 //add the enemy to the grid
+                gameGrid.Add(cloudIMG, 4, cloudRow);
                 //start cloud oscillation
+                cloud.Oscillate(gameGrid, this);
             }
             else
             {
@@ -117,7 +125,9 @@
                 user.row = 4;
                 gameGrid.SetRow(user.image, user.row);
                 //set the cloud row to the random number 
+                cloud.row = cloudRow;
                 //set the new row on the grid for the cloud
+                gameGrid.SetRow(cloud.cloudImage, cloudRow);
                 foreach (Platform plat in platformList) //resets plat columns
                 {
                     plat.col = 0;
@@ -204,8 +214,11 @@
         public void Destroy(Grid g, PlatformGame.MainPage page)
         {
             //set gridReady to false
+            page.gridReady = false;
             //remove the player imafe from grid using Grid.Remove()
+            g.Remove(image);
             //set the start button text to "Game Over"
+            page.startButton.Text = "Game Over";
         }
     }
 
