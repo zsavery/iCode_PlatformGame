@@ -290,13 +290,58 @@
         public Player user;
 
         //construntor
-
+        public CloudEnemy(Image i, int r, int c, Player u)
+        {
+            cloudImage = i;
+            row = r;
+            col = c;
+            user = u;
+        }
         //Oscilattion function
+        public void Oscillate(Grid g, Platform_MainPage page)
+        {
+            int boundaryLeft = 0;
+            int boundaryRight = 4;
+            MoveLeft(g, boundaryLeft, boundaryRight, page);
+        }
 
         //MoveLeft function
         // ---> if enemy collides with user Destroy() user
+        async public void MoveLeft(Grid g, int limitLeft, int limitRight, Platform_MainPage page)
+        {
+            while (col > limitLeft)
+            {
+                col--;
+                g.SetColumn(cloudImage, col);
+                if (col == user.col && row == user.row)
+                {
+                    user.Destroy(g, page);
+                    return;
+                }
+                await Task.Delay(500);
+            }
 
+            MoveRight(g, limitLeft, limitRight, page);
+
+        }
         //MoveRight Function
         // ---> if enemy collides with user Destroy() user
+        async public void MoveRight(Grid g, int limitLeft, int limitRight, Platform_MainPage page)
+        {
+            while (col < limitRight)
+            {
+                col++;
+                g.SetColumn(cloudImage, col);
+                if (col == user.col && row == user.row)
+                {
+                    user.Destroy(g, page);
+                    return;
+                }
+                await Task.Delay(500);
+            }
+
+            MoveLeft(g, limitLeft, limitRight, page);
+
+        }
     }
 }
