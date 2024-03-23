@@ -39,6 +39,10 @@
 
         async public void Fill_Grid(bool start)
         {
+            /*
+             * store a random row position forr the enemy
+             *     random number 0-4
+             */
             if (start)
             {
                 int rows = 5;
@@ -73,7 +77,6 @@
                     }
                 }
 
-
                 scoreLabel = new Label()
                 {
                     Text = "Score: " + score,
@@ -94,7 +97,6 @@
                     VerticalOptions = LayoutOptions.Center,
                     HorizontalOptions = LayoutOptions.Center
                 };
-
             
                 await Task.Delay(100);
                 gameGrid.Add(scoreLabel, 0, 4); //add score label
@@ -103,24 +105,25 @@
                 gameGrid.Add(user.image, user.col, user.row);
                 await Task.Delay(100);
                 gameGrid.Add(levelLabel, 4, 4); //add level label
+
+                //crate a new Image for the cloud image 
+                //set enemy to a new CloudEnemy ojbect
+                //add the enemy to the grid
+                //start cloud oscillation
             }
             else
             {
                 //reset user & platform -> Reset state
                 user.row = 4;
                 gameGrid.SetRow(user.image, user.row);
-                foreach(Platform plat in platformList) //resets plat columns
+                //set the cloud row to the random number 
+                //set the new row on the grid for the cloud
+                foreach (Platform plat in platformList) //resets plat columns
                 {
                     plat.col = 0;
                     gameGrid.SetColumn(plat.boxView, plat.col);
                 }
             }
-
-
-
-
-
-
 
 
             foreach (Platform plat in platformList)
@@ -130,8 +133,6 @@
                 plat.isMovingRight = true;
                 plat.Oscillate(gameGrid, this);
             }
-
-
         }
 
         private Player Create_User()
@@ -198,6 +199,13 @@
                 }
             }
             return con;
+        }
+
+        public void Destroy(Grid g, PlatformGame.MainPage page)
+        {
+            //set gridReady to false
+            //remove the player imafe from grid using Grid.Remove()
+            //set the start button text to "Game Over"
         }
     }
 
@@ -276,6 +284,10 @@
     public class CloudEnemy
     {
         // enemy attributes 
+        public Image cloudImage;
+        public int row;
+        public int col;
+        public Player user;
 
         //construntor
 
